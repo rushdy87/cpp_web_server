@@ -1,3 +1,12 @@
+// SimpleSocket.hpp
+// This header file defines the SimpleSocket class, which serves as a 
+// base class for creating and managing socket connections in a network 
+// application. The SimpleSocket class provides basic functionality for 
+// initializing a socket, testing connections, and retrieving socket 
+// information. It also declares a pure virtual function connect_to_network 
+// that must be implemented by derived classes to establish a network 
+// connection using the provided socket and address.
+
 #include <iostream> // For input/output operations
 #include <sys/socket.h> // socket library
 #include <netinet/in.h> // sockaddr_in structure
@@ -8,8 +17,10 @@ namespace RUSHDY
     {
     private:
     struct sockaddr_in address;
-    int sock; // This member variable will hold the socket connection descriptor.
-    int connection; // This member variable will hold the connection descriptor for accepted connections.
+     // This member variable will hold the socket connection descriptor.
+    int sock;
+     // This member variable will hold the connection descriptor for accepted connections.
+    int connection;
         
     public:
         // Constructor declaration for the SimpleSocket class. It takes parameters for domain, service, protocol, port, and interface.
@@ -26,5 +37,8 @@ namespace RUSHDY
         struct sockaddr_in get_address(); // Getter function to retrieve the address structure.
         int get_socket(); // Getter function to retrieve the socket descriptor.
         int get_connection(); // Getter function to retrieve the connection descriptor.
+
+        // Setters
+        void set_connection(int connection); // Setter function to set the connection descriptor.
     };
 }

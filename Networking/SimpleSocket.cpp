@@ -11,10 +11,6 @@ RUSHDY::SimpleSocket::SimpleSocket(int domain, int service, int protocol, int po
     // Create a socket using the provided parameters and store the connection descriptor in the member variable 'sock'.
     sock = socket(domain, service, protocol); // Create a socket using the provided parameters.
     test_connection(sock); // Test the socket connection using the test_connection member function.
-    
-    // Call the pure virtual function connect_to_network to establish a network connection and store the result in the member variable 'connection'.
-    connection = connect_to_network(sock, address); // Call the pure virtual function to establish a network connection and store the result in the member variable 'connection'.
-    test_connection(connection); // Test the network connection using the test_connection member function.
 }
 
 // Implementation of the test_connection member function. It takes an integer parameter 'item_to_test' and checks if it is less than 0, indicating a failed connection.
@@ -40,4 +36,9 @@ int RUSHDY::SimpleSocket::get_socket()
 int RUSHDY::SimpleSocket::get_connection()
 {
     return connection; // Return the connection descriptor.
+}
+
+// Implementation of the set_connection member function. It takes an integer parameter 'connection' and sets the connection descriptor of the SimpleSocket instance to the provided value.
+void RUSHDY::SimpleSocket::set_connection(int connection){
+    this->connection = connection; // Set the connection descriptor to the provided value.
 }
