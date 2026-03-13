@@ -17,5 +17,17 @@ RUSHDY::ListeningSocket::ListeningSocket(int domain, int service, int protocol, 
 // that will be used to accept incoming connection requests.
 void RUSHDY::ListeningSocket::start_listening()
 {
-    listening = listen(get_connection(), backlog);
+    listening = listen(get_socket(), backlog);
+}
+
+// Getter function to retrieve the listening socket descriptor.
+int RUSHDY::ListeningSocket::get_listening()
+{
+    return listening;
+}
+
+// Getter function to retrieve the backlog value.
+int RUSHDY::ListeningSocket::get_backlog()
+{
+    return backlog;
 }

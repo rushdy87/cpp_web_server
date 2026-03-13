@@ -19,5 +19,8 @@ namespace RUSHDY {
         // - backlog: The maximum length of the queue of pending connections.
         ListeningSocket(int domain, int service, int protocol, int port, u_long interface, int backlog);
         void start_listening();
+
+        int get_listening(); // Getter function to retrieve the listening socket descriptor.
+        int get_backlog(); // Getter function to retrieve the backlog value.    
     };
 }
