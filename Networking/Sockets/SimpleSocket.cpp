@@ -1,6 +1,6 @@
 #include "SimpleSocket.hpp"
 
-// Constructor for the SimpleSocket class. It takes three parameters: domain, service, and protocol.
+// Constructor for the SimpleSocket class. It takes parameters for the domain, service, protocol, port, and interface to initialize the socket and address structure.
 RUSHDY::SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port, u_long interface)
 {
     // Initialize the address structure with the provided parameters.
